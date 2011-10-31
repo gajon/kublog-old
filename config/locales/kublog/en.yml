@@ -4,20 +4,31 @@ en:
       index:
         edit: 'edit'
         delete: 'delete'
+        new: 'New Post'
         category_delete_confirm: 'Are you sure? All posts under this category will be left uncategorized'
         edit_category_prompt: 'New name:'
         actions: 'Actions'
         categories: 'Categories'
+        by: 'by'
+        comment_count:
+          one: '1 comment'
+          other: '%{count} comments'
       new:
         title: 'Building a Post'
       edit:
         title: 'Editing a Post'
       show:
+        by: 'by'
         edit: 'Edit'
         delete: 'Delete'
+        view_all: 'All posts'
         confirm: 'Are you sure?'
         new_comment: 'New Comment'
+        submit_comment: 'Create Comment'
         post_actions: 'Post Actions'
+        comment_count:
+          one: '1 comment'
+          other: '%{count} comments'
       form:
         or: 'or'
         cancel: 'cancel'
@@ -33,9 +44,12 @@ en:
       email_form:
         notify: 'Notify by E-mail'
         or: 'or'
+        send_email: 'Send E-Mail'
+        cancel: 'Cancel'
     post_mailer:
       new_post:
         greetings: 'Greetings'
+        read_more: 'Read more:'
   activerecord:
     models:
       'kublog/opst': 'Post'

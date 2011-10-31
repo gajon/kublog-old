@@ -11,16 +11,20 @@
 <div class='post-title'>
   <h1><%= @presenter.post %></h1>
   <span class='published-at'><%= l @presenter.post.updated_at, :format => :short %></span>
+  <span class='author'><%= t('.by') %> <%= @presenter.post.author %></span>
 </div>
 <div class='post-body'>
   <%= @presenter.post.body.html_safe %>
 </div>
 <div class='post-comments'>
+  <div class="comments-count">
+    <%= t('.comment_count', :count => @presenter.comment_count) %>
+  </div>
   <% @presenter.comments.each do |comment| %>
     <div class='comment <%= 'admin' if comment.admin? %>'>
       <h4><%= comment.author %></h4>
+      <span class='time'><%= comment.ftime %></span>
       <p class='body'><%= comment.body %></p>
-      <span><%= l comment.created_at, :format => :short %></span>
       <% if is_admin? %>
         <div class='admin-actions'>
           <%= link_to t('.delete'), post_comment_path(@presenter.post, comment), 
@@ -41,6 +45,6 @@
       <%= f.label :author_email %><br />
       <%= f.text_field :author_email %> <br />
     <% end %>
-    <%= f.submit %>
+    <%= f.submit t('.submit_comment') %>
   <% end %>
 </div>
