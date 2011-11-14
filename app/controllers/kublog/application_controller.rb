@@ -1,6 +1,6 @@
 module Kublog
   class ApplicationController < ActionController::Base
-    include UserIntegration::Common
+    include UserIntegration::Devise
     
     before_filter :require_admin
     
