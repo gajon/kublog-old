@@ -29,8 +29,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "rmagick", '~>2.13.1'
   s.add_runtime_dependency "carrierwave", '~>0.5.7'
   s.add_runtime_dependency 'liquid', '~>2.2.2'
-  s.add_runtime_dependency 'twitter'
-  s.add_runtime_dependency 'fb_graph'
+  s.add_runtime_dependency 'twitter', '~>1.6.2'
+  s.add_runtime_dependency 'fb_graph', '>2'
   
   # Development dependencies
   s.add_development_dependency "factory_girl_rails"
