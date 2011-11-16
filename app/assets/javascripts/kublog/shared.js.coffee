@@ -16,4 +16,7 @@ window.resetErrors = ->
     
 window.errorTemplate = (error) -> "<small class='error_description'>#{error}</small>"
 
-window.kublogPath = '<%= Kublog.root_path %>'
+if $("meta[content='kublog_path']").length > 0
+  window.kublogPath = $("meta[content='kublog_path']").attr("name")
+else
+  window.kublogPath = "/blog"
