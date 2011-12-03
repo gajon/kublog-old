@@ -17,6 +17,10 @@ window.resetErrors = ->
 window.errorTemplate = (error) -> "<small class='error_description'>#{error}</small>"
 
 if $("meta[content='kublog_path']").length > 0
-  window.kublogPath = $("meta[content='kublog_path']").attr("name")
+  window.kublogPath = String($("meta[content='kublog_path']").attr("name"))
 else
-  window.kublogPath = "/blog"
+  window.kublogPath = "/blog/"
+
+# Bad Things(tm) could happen if we don't have a path separator
+unless window.kublogPath.charAt(window.kublogPath.length-1) == '/'
+  window.kublogPath = window.kublogPath.concat('/')
